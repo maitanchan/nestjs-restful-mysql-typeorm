@@ -1,0 +1,7 @@
+services:
+  mysql-db:
+    image: mysql:latest
+    env_file:
+      - .env
+    ports:
+      - 3306:3306

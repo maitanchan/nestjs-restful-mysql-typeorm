@@ -16,13 +16,14 @@ import { ItemSubscriber } from './item.subscriber';
 
   ],
 
-  controllers: [
-    ItemsController
-  ],
+  controllers: [ItemsController],
 
   providers: [
+
     ItemsService,
+
     ItemSubscriber
+
   ]
 
 })

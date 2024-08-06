@@ -41,7 +41,9 @@ export class ItemsService {
     const item = await this.itemRepository.findOne({ where: { id }, relations: { listing: true, comments: true, tags: true } })
 
     if (!item) {
+
       throw new HttpException('Item not found', HttpStatus.NOT_FOUND)
+
     }
 
     return item
@@ -72,7 +74,9 @@ export class ItemsService {
       const item = await this.itemRepository.findOneBy({ id })
 
       if (!item) {
+
         throw new HttpException('Item not found', HttpStatus.NOT_FOUND)
+
       }
 
       item.name = updateItemDto.name
@@ -102,7 +106,9 @@ export class ItemsService {
     const item = await this.itemRepository.findOne({ where: { id } })
 
     if (!item) {
+
       throw new HttpException('Item not found', HttpStatus.NOT_FOUND)
+
     }
 
     await this.itemRepository.delete(id)
